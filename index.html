@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QTC Contractor Profile Update</title>
+  <meta name="description" content="QTC International Contractor Profile Update">
+  <style>
+    :root {
+      --blue:#dfeaf5;
+      --navy:#0f2741;
+      --red:#c9151e;
+      --line:#d9e1e8;
+      --text:#1e2a36;
+      --muted:#667788;
+      --danger:#b42318;
+      --success:#157347;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--blue);color:var(--text);line-height:1.45}
+    .topbar{background:#fff;border-bottom:6px solid var(--red);padding:22px 20px}
+    .topbar-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{display:block;width:min(420px,72vw);height:auto}
+    .badge{border:1px solid #b7c7d8;background:#f3f7fb;color:var(--navy);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+    .wrap{max-width:980px;margin:32px auto;padding:0 18px 48px}
+    .intro,.section{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 5px 20px rgba(15,39,65,.06)}
+    .intro{padding:28px;margin-bottom:18px}
+    h1{font-size:30px;margin:0 0 8px;color:var(--navy)}
+    .intro p{margin:6px 0;color:var(--muted)}
+    .time-note{margin-top:16px;display:inline-block;background:#eef5fb;color:var(--navy);padding:8px 12px;border-radius:8px;font-weight:700;font-size:13px}
+    .section{margin-top:18px;overflow:hidden}
+    .section-head{padding:18px 22px;background:#f9fbfc;border-bottom:1px solid var(--line)}
+    .section-head h2{margin:0;color:var(--navy);font-size:19px}
+    .section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}
+    .section-body{padding:22px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .grid-3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+    label.field{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#26394b}
+    .req{color:var(--danger)}
+    input[type="text"],input[type="email"],input[type="tel"],input[type="number"],select,textarea{
+      width:100%;border:1px solid #cbd5df;border-radius:9px;padding:11px 12px;background:#fff;font-size:14px;color:var(--text);outline:none
+    }
+    input:focus,select:focus,textarea:focus{border-color:#7296b7;box-shadow:0 0 0 3px rgba(88,129,165,.12)}
+    textarea{min-height:95px;resize:vertical}
+    .subhead{font-size:14px;font-weight:800;color:var(--navy);margin:4px 0 10px}
+    .checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+    .check{display:flex;align-items:flex-start;gap:9px;border:1px solid #e3e9ef;padding:10px 11px;border-radius:8px;background:#fbfcfd;font-size:13px}
+    .check input{margin-top:2px}
+    .hint{font-size:12px;color:var(--muted);margin-top:6px}
+    .filebox{border:1px dashed #9fb2c3;background:#f9fbfc;padding:16px;border-radius:10px}
+    .confirm{display:flex;gap:10px;align-items:flex-start;border:1px solid #cfe3df;background:#f2faf8;padding:14px;border-radius:10px;font-size:13px}
+    .actions{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:22px}
+    button{border:0;background:var(--red);color:#fff;font-weight:800;padding:13px 22px;border-radius:9px;cursor:pointer;font-size:15px}
+    button:hover{filter:brightness(.94)} button:disabled{opacity:.6;cursor:not-allowed}
+    .privacy{font-size:12px;color:var(--muted);max-width:600px}
+    .status{display:none;margin-top:16px;padding:12px 14px;border-radius:9px;font-size:13px;font-weight:700}
+    .status.working{display:block;background:#fff8e8;color:#815b00;border:1px solid #efd28b}
+    .status.success{display:block;background:#edf8f1;color:var(--success);border:1px solid #b9dec7}
+    .status.error{display:block;background:#fff1f0;color:var(--danger);border:1px solid #f2b8b5}
+    footer{margin-top:22px;text-align:center;color:#516a82;font-size:12px}
+    @media(max-width:720px){
+      .grid,.grid-3,.checks{grid-template-columns:1fr}
+      .topbar-inner{align-items:flex-start;flex-direction:column}
+      .badge{white-space:normal}
+      h1{font-size:25px}
+      .section-body{padding:18px}
+      .actions{align-items:stretch;flex-direction:column}
+      button{width:100%}
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <img class="logo" src="data:image/webp;base64,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bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDYuMC1jMDAyIDc5LjE2NDQ2MCwgMjAyMC8wNS8xMi0xNjowNDoxNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIxLjIgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAxOS0wOS0yNFQxMzoyMy0wNTowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjAtMTAtMjhUMDk6MDk6MDYtMDU6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjAtMTAtMjhUMDk6MDk6MDYtMDU6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBwaG90b3Nob3A6SUNDUHJvZmlsZT0ic1JHQiBJRUM2MTk2Ni0yLjEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ZWFmYzA3NTktODg4Yi1mNTQwLWJjZDktNjIyZmQwZTE1OWU5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOmVhZmMwNzU5LTg4OGItZjU0MC1iY2Q5LTYyMmZkMGUxNTllOSIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmVhZmMwNzU5LTg4OGItZjU0MC1iY2Q5LTYyMmZkMGUxNTllOSI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZWFmYzA3NTktODg4Yi1mNTQwLWJjZDktNjIyZmQwZTE1OWU5IiBzdEV2dDp3aGVuPSIyMDE5LTA5LTI0VDEzOjIzLTA1OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMiAoV2luZG93cykiLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+" alt="QTC International">
+    <div class="badge">Contractor Profile Refresh</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>Contractor Profile Update</h1>
+    <p>Please review and update your information so QTC can maintain accurate contractor records for future inspection opportunities.</p>
+    <p>Only provide current information. This is a profile refresh and is not a job application or employment agreement.</p>
+    <div class="time-note">Estimated completion time: 5 minutes</div>
+  </section>
+
+  <form id="contractorForm">
+    <section class="section">
+      <div class="section-head"><h2>1. Contact Information</h2><p>Tell us how to reach you and where you are currently based.</p></div>
+      <div class="section-body">
+        <div class="grid">
+          <div><label class="field">First Name <span class="req">*</span></label><input name="firstName" type="text" required></div>
+          <div><label class="field">Last Name <span class="req">*</span></label><input name="lastName" type="text" required></div>
+          <div><label class="field">Email Address <span class="req">*</span></label><input name="email" type="email" required></div>
+          <div><label class="field">Phone / WhatsApp <span class="req">*</span></label><input name="phone" type="tel" required></div>
+        </div>
+        <div class="grid-3" style="margin-top:18px">
+          <div><label class="field">City <span class="req">*</span></label><input name="city" type="text" required></div>
+          <div><label class="field">State / Province <span class="req">*</span></label><input name="state" type="text" required></div>
+          <div><label class="field">Country <span class="req">*</span></label>
+            <select name="country" required><option value="">Select</option><option>United States</option><option>Canada</option><option>Mexico</option><option>Other</option></select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>2. Inspection Disciplines</h2><p>Select every area in which you have meaningful inspection experience.</p></div>
+      <div class="section-body">
+        <div class="subhead">Vendor / Shop Inspection</div>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - Line Pipe / API 5L">Pipe Mill – Line Pipe / API 5L</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - OCTG / API 5CT">Pipe Mill – OCTG / API 5CT</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - FBE">Pipe Coatings – FBE</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - ARO">Pipe Coatings – ARO</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - 3LPE / 3LPP">Pipe Coatings – 3LPE / 3LPP</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - 5LPE / 5LPP">Pipe Coatings – 5LPE / 5LPP</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Liquid / Shop Coatings">Liquid / Shop Coatings</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Fixed Equipment">Fixed Equipment</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Rotating Equipment">Rotating Equipment</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Electrical Equipment">Electrical Equipment</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Subsea Equipment">Subsea Equipment</label>
+        </div>
+
+        <div class="subhead" style="margin-top:20px">Construction / Field Inspection</div>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="disciplines" value="Welding">Welding</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Coating">Coating</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Mechanical">Mechanical</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Electrical">Electrical</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Civil">Civil</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Utility / Pipeline">Utility / Pipeline</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="NDT / NDE">NDT / NDE</label>
+          <label class="check"><input type="checkbox" name="disciplines" value="Chief / Lead Inspector">Chief / Lead Inspector</label>
+        </div>
+        <div style="margin-top:18px"><label class="field">Other Inspection Disciplines</label><input name="otherDisciplines" type="text" placeholder="Enter any other relevant inspection disciplines"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>3. Certifications & Credentials</h2><p>Select certifications relevant to your inspection work.</p></div>
+      <div class="section-body">
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="certifications" value="AWS CWI">AWS CWI</label>
+          <label class="check"><input type="checkbox" name="certifications" value="API 1169">API 1169</label>
+          <label class="check"><input type="checkbox" name="certifications" value="API SIFE">API SIFE</label>
+          <label class="check"><input type="checkbox" name="certifications" value="API SIRE">API SIRE</label>
+          <label class="check"><input type="checkbox" name="certifications" value="AMPP / NACE CIP Level 1">AMPP / NACE CIP Level 1</label>
+          <label class="check"><input type="checkbox" name="certifications" value="AMPP / NACE CIP Level 2">AMPP / NACE CIP Level 2</label>
+          <label class="check"><input type="checkbox" name="certifications" value="AMPP / NACE CIP Level 3">AMPP / NACE CIP Level 3</label>
+          <label class="check"><input type="checkbox" name="certifications" value="ASNT Level II">ASNT Level II</label>
+          <label class="check"><input type="checkbox" name="certifications" value="ASNT Level III">ASNT Level III</label>
+          <label class="check"><input type="checkbox" name="certifications" value="CPWI">CPWI</label>
+          <label class="check"><input type="checkbox" name="certifications" value="OSHA 10">OSHA 10</label>
+          <label class="check"><input type="checkbox" name="certifications" value="OSHA 30">OSHA 30</label>
+          <label class="check"><input type="checkbox" name="certifications" value="TWIC">TWIC</label>
+        </div>
+        <div class="grid" style="margin-top:18px">
+          <div><label class="field">Certification Status <span class="req">*</span></label>
+            <select name="certStatus" required>
+              <option value="">Select</option>
+              <option>All listed certifications are current</option>
+              <option>Some listed certifications are expired</option>
+              <option>All listed certifications are expired</option>
+              <option>Not applicable / None listed</option>
+            </select>
+          </div>
+          <div><label class="field">Other Certifications</label><input name="otherCertifications" type="text" placeholder="Enter any additional certifications"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>4. Experience & Availability</h2><p>Give us a quick current snapshot. Your resume provides the detailed history.</p></div>
+      <div class="section-body">
+        <div class="grid">
+          <div><label class="field">Years of Inspection Experience <span class="req">*</span></label>
+            <select name="yearsExperience" required>
+              <option value="">Select</option><option>Less than 5 years</option><option>5–10 years</option><option>11–20 years</option><option>21–30 years</option><option>30+ years</option>
+            </select>
+          </div>
+          <div><label class="field">Current Availability <span class="req">*</span></label>
+            <select name="availability" required>
+              <option value="">Select</option><option>Available now</option><option>Available within 2 weeks</option><option>Currently on assignment</option><option>Not currently available</option><option>Not seeking work at this time</option>
+            </select>
+          </div>
+          <div><label class="field">Travel Preference <span class="req">*</span></label>
+            <select name="travel" required>
+              <option value="">Select</option><option>Domestic travel</option><option>Domestic & international travel</option><option>Local assignments only</option><option>Depends on assignment</option>
+            </select>
+          </div>
+          <div><label class="field">Primary Area of Experience</label><input name="primaryExperience" type="text" placeholder="Example: Pipe mill inspection / FBE coating"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>5. Preferred Rates</h2><p>Optional. Rates are used as a reference and may vary by assignment.</p></div>
+      <div class="section-body">
+        <div class="grid">
+          <div><label class="field">Preferred Hourly Rate</label><input name="hourlyRate" type="number" min="0" step="0.01" placeholder="0.00"></div>
+          <div><label class="field">Preferred Daily Rate</label><input name="dailyRate" type="number" min="0" step="0.01" placeholder="0.00"></div>
+          <div><label class="field">Currency</label><select name="currency"><option>USD</option><option>CAD</option><option>MXN</option><option>Other</option></select></div>
+          <div><label class="field">Rate Notes</label><input name="rateNotes" type="text" placeholder="Example: Plus per diem; negotiable by assignment"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>6. Resume & Credentials</h2><p>Please provide current supporting documents where available.</p></div>
+      <div class="section-body">
+        <div class="grid">
+          <div class="filebox"><label class="field">Current Resume</label><input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx"><div class="hint">PDF or Word preferred. Maximum 8 MB.</div></div>
+          <div class="filebox"><label class="field">Certification Documents</label><input id="credentialFiles" name="credentialFiles" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple><div class="hint">Upload current certification cards or credential documents. Maximum 8 MB per file.</div></div>
+        </div>
+        <div style="margin-top:18px"><label class="field">Additional Comments</label><textarea name="comments" placeholder="Anything else QTC should know about your experience, availability, or credentials?"></textarea></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>7. Confirmation</h2></div>
+      <div class="section-body">
+        <label class="confirm"><input type="checkbox" name="confirmation" required><span>I confirm that the information provided above is current and accurate to the best of my knowledge.</span></label>
+        <div class="actions">
+          <div class="privacy">Your information is being collected by QTC International for contractor record maintenance and future inspection opportunities.</div>
+          <button id="submitButton" type="submit">Submit Profile Update</button>
+        </div>
+        <div id="status" class="status"></div>
+      </div>
+    </section>
+  </form>
+
+  <footer>© QTC International • Contractor Profile Refresh</footer>
+</main>
+
+<script>
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbywX1b0FYuVlfv_E3fAJ1MNCarD6aAPB7mOdk731XGahOmpgnll5VlnoKf2NRbjn09EFA/exec';
+const MAX_FILE_SIZE = 8 * 1024 * 1024;
+const MAX_TOTAL_SIZE = 25 * 1024 * 1024;
+
+document.getElementById('contractorForm').addEventListener('submit', async function(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const submitButton = document.getElementById('submitButton');
+  const disciplines = [...form.querySelectorAll('input[name="disciplines"]:checked')];
+
+  if (disciplines.length === 0) {
+    showStatus('error', 'Please select at least one inspection discipline.');
+    return;
+  }
+
+  if (!form.reportValidity()) return;
+
+  const resumeFile = document.getElementById('resume').files[0] || null;
+  const credentialFiles = [...document.getElementById('credentialFiles').files];
+  const allFiles = [resumeFile, ...credentialFiles].filter(Boolean);
+
+  let totalSize = 0;
+  for (const file of allFiles) {
+    totalSize += file.size;
+    if (file.size > MAX_FILE_SIZE) {
+      showStatus('error', file.name + ' is larger than the 8 MB file limit.');
+      return;
+    }
+  }
+  if (totalSize > MAX_TOTAL_SIZE) {
+    showStatus('error', 'Total uploaded files exceed 25 MB. Please reduce the number or size of files.');
+    return;
+  }
+
+  submitButton.disabled = true;
+  showStatus('working', 'Uploading and submitting your profile. Please do not close this page.');
+
+  try {
+    const payload = {
+      firstName: form.elements.firstName.value.trim(),
+      lastName: form.elements.lastName.value.trim(),
+      email: form.elements.email.value.trim(),
+      phone: form.elements.phone.value.trim(),
+      city: form.elements.city.value.trim(),
+      state: form.elements.state.value.trim(),
+      country: form.elements.country.value,
+      disciplines: disciplines.map(x => x.value),
+      otherDisciplines: form.elements.otherDisciplines.value.trim(),
+      certifications: [...form.querySelectorAll('input[name="certifications"]:checked')].map(x => x.value),
+      certStatus: form.elements.certStatus.value,
+      otherCertifications: form.elements.otherCertifications.value.trim(),
+      yearsExperience: form.elements.yearsExperience.value,
+      availability: form.elements.availability.value,
+      travel: form.elements.travel.value,
+      primaryExperience: form.elements.primaryExperience.value.trim(),
+      hourlyRate: form.elements.hourlyRate.value,
+      dailyRate: form.elements.dailyRate.value,
+      currency: form.elements.currency.value,
+      rateNotes: form.elements.rateNotes.value.trim(),
+      comments: form.elements.comments.value.trim(),
+      resume: resumeFile ? await fileToObject(resumeFile) : null,
+      credentialFiles: await Promise.all(credentialFiles.map(fileToObject))
+    };
+
+    const body = new URLSearchParams();
+    body.set('payload', JSON.stringify(payload));
+
+    await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
+      body: body.toString()
+    });
+
+    form.reset();
+    submitButton.disabled = false;
+    showStatus('success', 'Thank you. Your contractor profile has been submitted successfully.');
+    window.scrollTo({top: document.body.scrollHeight, behavior:'smooth'});
+  } catch (err) {
+    submitButton.disabled = false;
+    showStatus('error', 'Your submission could not be sent. Please try again.');
+  }
+});
+
+function fileToObject(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = event => {
+      const base64 = event.target.result.split(',')[1];
+      resolve({name:file.name, mimeType:file.type || 'application/octet-stream', base64});
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+function showStatus(type, message) {
+  const status = document.getElementById('status');
+  status.className = 'status ' + type;
+  status.textContent = message;
+  status.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+</script>
+</body>
+</html>
