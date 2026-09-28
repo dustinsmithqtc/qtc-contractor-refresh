@@ -42,7 +42,10 @@
     }
     input:focus,select:focus,textarea:focus{border-color:#7296b7;box-shadow:0 0 0 3px rgba(88,129,165,.12)}
     textarea{min-height:95px;resize:vertical}
-    .subhead{font-size:14px;font-weight:800;color:var(--navy);margin:4px 0 10px}
+    .subhead{font-size:16px;font-weight:800;color:var(--navy);margin:4px 0 12px}
+    .category-block{margin:14px 0 18px;padding:14px 16px;border-left:4px solid #9fb2c3;background:#f8fafc;border-radius:0 9px 9px 0}
+    .category-title{font-size:13px;font-weight:800;color:#26394b;text-transform:uppercase;letter-spacing:.03em;margin:0 0 10px}
+    .category-block .checks{margin:0}
     .checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
     .check{display:flex;align-items:flex-start;gap:9px;border:1px solid #e3e9ef;padding:10px 11px;border-radius:8px;background:#fbfcfd;font-size:13px}
     .check input{margin-top:2px}
@@ -108,22 +111,44 @@
     <section class="section">
       <div class="section-head"><h2>2. Inspection Disciplines</h2><p>Select every area in which you have meaningful inspection experience.</p></div>
       <div class="section-body">
-        <div class="subhead">Vendor / Shop Inspection</div>
-        <div class="checks">
-          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - Line Pipe / API 5L">Pipe Mill – Line Pipe / API 5L</label>
-          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - OCTG / API 5CT">Pipe Mill – OCTG / API 5CT</label>
-          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - FBE">Pipe Coatings – FBE</label>
-          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - ARO">Pipe Coatings – ARO</label>
-          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - 3LPE / 3LPP">Pipe Coatings – 3LPE / 3LPP</label>
-          <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - 5LPE / 5LPP">Pipe Coatings – 5LPE / 5LPP</label>
-          <label class="check"><input type="checkbox" name="disciplines" value="Liquid / Shop Coatings">Liquid / Shop Coatings</label>
-          <label class="check"><input type="checkbox" name="disciplines" value="Fixed Equipment">Fixed Equipment</label>
-          <label class="check"><input type="checkbox" name="disciplines" value="Rotating Equipment">Rotating Equipment</label>
-          <label class="check"><input type="checkbox" name="disciplines" value="Electrical Equipment">Electrical Equipment</label>
-          <label class="check"><input type="checkbox" name="disciplines" value="Subsea Equipment">Subsea Equipment</label>
+        <div class="subhead">Shop Inspections</div>
+
+        <div class="category-block">
+          <div class="category-title">Pipe Mill</div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - Line Pipe / API 5L">Line Pipe / API 5L</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - OCTG / API 5CT">OCTG / API 5CT</label>
+          </div>
         </div>
 
-        <div class="subhead" style="margin-top:20px">Construction / Field Inspection</div>
+        <div class="category-block">
+          <div class="category-title">Pipe Coating</div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - FBE">FBE</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - ARO">ARO</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - 3LPE / 3LPP">3LPE / 3LPP</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - 5LPE / 5LPP">5LPE / 5LPP</label>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-title">Liquid Coatings</div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="disciplines" value="Liquid / Shop Coatings">Liquid / Shop Coatings</label>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-title">Equipment</div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="disciplines" value="Fixed Equipment">Fixed Equipment</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Rotating Equipment">Rotating Equipment</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Electrical Equipment">Electrical Equipment</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Subsea Equipment">Subsea Equipment</label>
+          </div>
+        </div>
+
+        <div class="subhead" style="margin-top:24px">Construction / Field Inspections</div>
         <div class="checks">
           <label class="check"><input type="checkbox" name="disciplines" value="Welding">Welding</label>
           <label class="check"><input type="checkbox" name="disciplines" value="Coating">Coating</label>
@@ -134,6 +159,7 @@
           <label class="check"><input type="checkbox" name="disciplines" value="NDT / NDE">NDT / NDE</label>
           <label class="check"><input type="checkbox" name="disciplines" value="Chief / Lead Inspector">Chief / Lead Inspector</label>
         </div>
+
         <div style="margin-top:18px"><label class="field">Other Inspection Disciplines</label><input name="otherDisciplines" type="text" placeholder="Enter any other relevant inspection disciplines"></div>
       </div>
     </section>
@@ -141,21 +167,50 @@
     <section class="section">
       <div class="section-head"><h2>3. Certifications & Credentials</h2><p>Select certifications relevant to your inspection work.</p></div>
       <div class="section-body">
-        <div class="checks">
-          <label class="check"><input type="checkbox" name="certifications" value="AWS CWI">AWS CWI</label>
-          <label class="check"><input type="checkbox" name="certifications" value="API 1169">API 1169</label>
-          <label class="check"><input type="checkbox" name="certifications" value="API SIFE">API SIFE</label>
-          <label class="check"><input type="checkbox" name="certifications" value="API SIRE">API SIRE</label>
-          <label class="check"><input type="checkbox" name="certifications" value="AMPP / NACE CIP Level 1">AMPP / NACE CIP Level 1</label>
-          <label class="check"><input type="checkbox" name="certifications" value="AMPP / NACE CIP Level 2">AMPP / NACE CIP Level 2</label>
-          <label class="check"><input type="checkbox" name="certifications" value="AMPP / NACE CIP Level 3">AMPP / NACE CIP Level 3</label>
-          <label class="check"><input type="checkbox" name="certifications" value="ASNT Level II">ASNT Level II</label>
-          <label class="check"><input type="checkbox" name="certifications" value="ASNT Level III">ASNT Level III</label>
-          <label class="check"><input type="checkbox" name="certifications" value="CPWI">CPWI</label>
-          <label class="check"><input type="checkbox" name="certifications" value="OSHA 10">OSHA 10</label>
-          <label class="check"><input type="checkbox" name="certifications" value="OSHA 30">OSHA 30</label>
-          <label class="check"><input type="checkbox" name="certifications" value="TWIC">TWIC</label>
+
+        <div class="category-block">
+          <div class="category-title">API</div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="certifications" value="API 1169">API 1169</label>
+            <label class="check"><input type="checkbox" name="certifications" value="API SIFE">API SIFE</label>
+            <label class="check"><input type="checkbox" name="certifications" value="API SIRE">API SIRE</label>
+          </div>
         </div>
+
+        <div class="category-block">
+          <div class="category-title">AMPP / NACE</div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="certifications" value="AMPP / NACE CIP Level 1">CIP Level 1</label>
+            <label class="check"><input type="checkbox" name="certifications" value="AMPP / NACE CIP Level 2">CIP Level 2</label>
+            <label class="check"><input type="checkbox" name="certifications" value="AMPP / NACE CIP Level 3">CIP Level 3</label>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-title">NDT / ASNT</div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="certifications" value="ASNT Level II">ASNT Level II</label>
+            <label class="check"><input type="checkbox" name="certifications" value="ASNT Level III">ASNT Level III</label>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-title">Welding</div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="certifications" value="AWS CWI">AWS CWI</label>
+            <label class="check"><input type="checkbox" name="certifications" value="CPWI">CPWI</label>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <div class="category-title">Safety & Site Access</div>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="certifications" value="OSHA 10">OSHA 10</label>
+            <label class="check"><input type="checkbox" name="certifications" value="OSHA 30">OSHA 30</label>
+            <label class="check"><input type="checkbox" name="certifications" value="TWIC">TWIC</label>
+          </div>
+        </div>
+
         <div class="grid" style="margin-top:18px">
           <div><label class="field">Certification Status <span class="req">*</span></label>
             <select name="certStatus" required>
