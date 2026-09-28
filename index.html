@@ -43,8 +43,8 @@
     input:focus,select:focus,textarea:focus{border-color:#7296b7;box-shadow:0 0 0 3px rgba(88,129,165,.12)}
     textarea{min-height:95px;resize:vertical}
     .subhead{font-size:16px;font-weight:800;color:var(--navy);margin:4px 0 12px}
-    .category-block{margin:14px 0 18px;padding:14px 16px;border-left:4px solid #9fb2c3;background:#f8fafc;border-radius:0 9px 9px 0}
-    .category-title{font-size:13px;font-weight:800;color:#26394b;text-transform:uppercase;letter-spacing:.03em;margin:0 0 10px}
+    .category-block{margin:20px 0 24px;padding:0}
+    .category-title{font-size:13px;font-weight:800;color:#26394b;text-transform:uppercase;letter-spacing:.03em;margin:0 0 12px;padding-bottom:7px;border-bottom:1px solid #dfe5eb}
     .category-block .checks{margin:0}
     .checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
     .check{display:flex;align-items:flex-start;gap:9px;border:1px solid #e3e9ef;padding:10px 11px;border-radius:8px;background:#fbfcfd;font-size:13px}
@@ -118,23 +118,19 @@
           <div class="checks">
             <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - Line Pipe / API 5L">Line Pipe / API 5L</label>
             <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - OCTG / API 5CT">OCTG / API 5CT</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - Seamless">Seamless</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - ERW">ERW</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Mill - SAW">SAW</label>
           </div>
         </div>
 
         <div class="category-block">
-          <div class="category-title">Pipe Coating</div>
+          <div class="category-title">Pipe &amp; Liquid Coatings</div>
           <div class="checks">
-            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - FBE">FBE</label>
-            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - ARO">ARO</label>
-            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - 3LPE / 3LPP">3LPE / 3LPP</label>
-            <label class="check"><input type="checkbox" name="disciplines" value="Pipe Coatings - 5LPE / 5LPP">5LPE / 5LPP</label>
-          </div>
-        </div>
-
-        <div class="category-block">
-          <div class="category-title">Liquid Coatings</div>
-          <div class="checks">
-            <label class="check"><input type="checkbox" name="disciplines" value="Liquid / Shop Coatings">Liquid / Shop Coatings</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe & Liquid Coatings - FBE / ARO">FBE / ARO</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe & Liquid Coatings - 3LPE / 3LPP">3LPE / 3LPP</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe & Liquid Coatings - 5LPE / 5LPP">5LPE / 5LPP</label>
+            <label class="check"><input type="checkbox" name="disciplines" value="Pipe & Liquid Coatings - Liquid Coatings">Liquid Coatings</label>
           </div>
         </div>
 
@@ -148,7 +144,7 @@
           </div>
         </div>
 
-        <div class="subhead" style="margin-top:24px">Construction / Field Inspections</div>
+        <div class="subhead" style="margin-top:28px">Construction / Field Inspections</div>
         <div class="checks">
           <label class="check"><input type="checkbox" name="disciplines" value="Welding">Welding</label>
           <label class="check"><input type="checkbox" name="disciplines" value="Coating">Coating</label>
