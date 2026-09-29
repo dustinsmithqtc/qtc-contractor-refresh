@@ -341,19 +341,7 @@
     </section>
 
     <section class="section">
-      <div class="section-head"><h2>5. Preferred Rates</h2><p>Optional. Rates are used as a reference and may vary by assignment.</p></div>
-      <div class="section-body">
-        <div class="grid">
-          <div><label class="field">Preferred Hourly Rate</label><input name="hourlyRate" type="number" min="0" step="0.01" placeholder="0.00"></div>
-          <div><label class="field">Preferred Daily Rate</label><input name="dailyRate" type="number" min="0" step="0.01" placeholder="0.00"></div>
-          <div><label class="field">Currency</label><select name="currency"><option>USD</option><option>CAD</option><option>MXN</option><option>Other</option></select></div>
-          <div><label class="field">Rate Notes</label><input name="rateNotes" type="text" placeholder="Example: Plus per diem; negotiable by assignment"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head"><h2>6. Resume & Credentials</h2><p>Please provide current supporting documents where available.</p></div>
+      <div class="section-head"><h2>5. Resume & Credentials</h2><p>Please provide current supporting documents where available.</p></div>
       <div class="section-body">
         <div class="grid">
           <div class="filebox"><label class="field">Current Resume</label><input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx"><div class="hint">PDF or Word preferred. Maximum 8 MB.</div></div>
@@ -364,7 +352,7 @@
     </section>
 
     <section class="section">
-      <div class="section-head"><h2>7. Confirmation</h2></div>
+      <div class="section-head"><h2>6. Confirmation</h2></div>
       <div class="section-body">
         <label class="confirm"><input type="checkbox" name="confirmation" required><span>I confirm that the information provided above is current and accurate to the best of my knowledge.</span></label>
         <div class="actions">
@@ -436,10 +424,6 @@ document.getElementById('contractorForm').addEventListener('submit', async funct
       availability: form.elements.availability.value,
       travel: form.elements.travel.value,
       primaryExperience: form.elements.primaryExperience.value.trim(),
-      hourlyRate: form.elements.hourlyRate.value,
-      dailyRate: form.elements.dailyRate.value,
-      currency: form.elements.currency.value,
-      rateNotes: form.elements.rateNotes.value.trim(),
       comments: form.elements.comments.value.trim(),
       resume: resumeFile ? await fileToObject(resumeFile) : null,
       credentialFiles: await Promise.all(credentialFiles.map(fileToObject))
