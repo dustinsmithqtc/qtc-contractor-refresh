@@ -407,24 +407,43 @@
     </section>
 
     <section class="section">
-      <div class="section-head"><h2>4. Experience & Availability</h2><p>Give us a quick current snapshot. Your resume provides the detailed history.</p></div>
+      <div class="section-head"><h2>4. Experience & Availability</h2><p>Provide a current snapshot of your experience and availability.</p></div>
       <div class="section-body">
         <div class="grid">
-          <div><label class="field">Years of Overall Inspection Experience <span class="req">*</span></label><input name="yearsExperience" type="number" min="0" step="1" placeholder="Years" required></div>
-          <div><label class="field">Years of Experience in Oil/Gas Industry</label><input name="oilGasYears" type="number" min="0" step="1" placeholder="Years"></div>
-          <div><label class="field">Years of QA/QC Experience</label><input name="qaQcYears" type="number" min="0" step="1" placeholder="Years"></div>
-          <div><label class="field">Years of Vendor Surveillance Experience</label><input name="vendorSurveillanceYears" type="number" min="0" step="1" placeholder="Years"></div>
-          <div><label class="field">Current Availability <span class="req">*</span></label>
-            <select name="availability" required>
-              <option value="">Select</option><option>Available now</option><option>Available within 2 weeks</option><option>Currently on assignment</option><option>Not currently available</option><option>Not seeking work at this time</option>
-            </select>
+          <div>
+            <div class="subhead">Experience</div>
+            <div style="display:grid;gap:16px">
+              <div><label class="field">Years of Experience in Oil/Gas Industry</label><input name="oilGasYears" type="number" min="0" step="1" placeholder="Years"></div>
+              <div><label class="field">Years of QA/QC Experience</label><input name="qaQcYears" type="number" min="0" step="1" placeholder="Years"></div>
+              <div><label class="field">Years of Vendor Surveillance Experience</label><input name="vendorSurveillanceYears" type="number" min="0" step="1" placeholder="Years"></div>
+              <div class="hint">Experience categories may overlap. Please enter approximate years.</div>
+            </div>
           </div>
-          <div><label class="field">Travel Preference <span class="req">*</span></label>
-            <select name="travel" required>
-              <option value="">Select</option><option>Domestic travel</option><option>Domestic & international travel</option><option>Local assignments only</option><option>Depends on assignment</option>
-            </select>
+
+          <div>
+            <div class="subhead">Availability</div>
+            <div style="display:grid;gap:16px">
+              <div><label class="field">Current Availability <span class="req">*</span></label>
+                <select name="availability" required>
+                  <option value="">Select</option>
+                  <option>Available now</option>
+                  <option>Available within 2 weeks</option>
+                  <option>Currently on assignment</option>
+                  <option>Not currently available</option>
+                  <option>Not seeking work at this time</option>
+                </select>
+              </div>
+              <div><label class="field">Travel Preference <span class="req">*</span></label>
+                <select name="travel" required>
+                  <option value="">Select</option>
+                  <option>Domestic travel</option>
+                  <option>Domestic & international travel</option>
+                  <option>Local assignments only</option>
+                  <option>Depends on assignment</option>
+                </select>
+              </div>
+            </div>
           </div>
-          <div><label class="field">Primary Area of Experience</label><input name="primaryExperience" type="text" placeholder="Example: Pipe mill inspection / FBE coating"></div>
         </div>
       </div>
     </section>
@@ -522,13 +541,11 @@ document.getElementById('contractorForm').addEventListener('submit', async funct
       certifications: [...form.querySelectorAll('input[name="certifications"]:checked')].map(x => x.value),
       certStatus: form.elements.certStatus.value,
       otherCertifications: form.elements.otherCertifications.value.trim(),
-      yearsExperience: form.elements.yearsExperience.value,
       oilGasYears: form.elements.oilGasYears.value,
       qaQcYears: form.elements.qaQcYears.value,
       vendorSurveillanceYears: form.elements.vendorSurveillanceYears.value,
       availability: form.elements.availability.value,
       travel: form.elements.travel.value,
-      primaryExperience: form.elements.primaryExperience.value.trim(),
       comments: form.elements.comments.value.trim(),
       resume: resumeFile ? await fileToObject(resumeFile) : null,
       credentialFiles: await Promise.all(credentialFiles.map(fileToObject))
