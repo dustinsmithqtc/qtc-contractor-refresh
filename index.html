@@ -59,6 +59,8 @@
     .checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
     .check{display:flex;align-items:flex-start;gap:9px;border:1px solid #e3e9ef;padding:10px 11px;border-radius:8px;background:#fbfcfd;font-size:13px}
     .check input{margin-top:2px}
+    .ndt-levels{grid-template-columns:max-content max-content;justify-content:start;gap:8px}
+    .ndt-levels .check{width:auto;min-width:0;padding:8px 10px}
     .hint{font-size:12px;color:var(--muted);margin-top:6px}
     .filebox{border:1px dashed #9fb2c3;background:#f9fbfc;padding:16px;border-radius:10px}
     .confirm{display:flex;gap:10px;align-items:flex-start;border:1px solid #cfe3df;background:#f2faf8;padding:14px;border-radius:10px;font-size:13px}
@@ -238,7 +240,7 @@
 
           <div class="category-block">
             <div class="category-title">Ultrasonic Testing (UT)</div>
-            <div class="checks">
+            <div class="checks ndt-levels">
               <label class="check"><input type="checkbox" name="certifications" value="UT Level II">Level II</label>
               <label class="check"><input type="checkbox" name="certifications" value="UT Level III">Level III</label>
             </div>
@@ -246,7 +248,7 @@
 
           <div class="category-block">
             <div class="category-title">Magnetic Particle Testing (MT / MPI)</div>
-            <div class="checks">
+            <div class="checks ndt-levels">
               <label class="check"><input type="checkbox" name="certifications" value="MT / MPI Level II">Level II</label>
               <label class="check"><input type="checkbox" name="certifications" value="MT / MPI Level III">Level III</label>
             </div>
@@ -254,7 +256,7 @@
 
           <div class="category-block">
             <div class="category-title">Liquid Penetrant Testing (PT / LP)</div>
-            <div class="checks">
+            <div class="checks ndt-levels">
               <label class="check"><input type="checkbox" name="certifications" value="PT / LP Level II">Level II</label>
               <label class="check"><input type="checkbox" name="certifications" value="PT / LP Level III">Level III</label>
             </div>
@@ -262,7 +264,7 @@
 
           <div class="category-block">
             <div class="category-title">Radiographic Testing (RT)</div>
-            <div class="checks">
+            <div class="checks ndt-levels">
               <label class="check"><input type="checkbox" name="certifications" value="RT Level II">Level II</label>
               <label class="check"><input type="checkbox" name="certifications" value="RT Level III">Level III</label>
             </div>
@@ -270,7 +272,7 @@
 
           <div class="category-block">
             <div class="category-title">Visual Testing (VT)</div>
-            <div class="checks">
+            <div class="checks ndt-levels">
               <label class="check"><input type="checkbox" name="certifications" value="VT Level II">Level II</label>
               <label class="check"><input type="checkbox" name="certifications" value="VT Level III">Level III</label>
             </div>
@@ -278,7 +280,7 @@
 
           <div class="category-block">
             <div class="category-title">Eddy Current Testing (ET)</div>
-            <div class="checks">
+            <div class="checks ndt-levels">
               <label class="check"><input type="checkbox" name="certifications" value="ET Level II">Level II</label>
               <label class="check"><input type="checkbox" name="certifications" value="ET Level III">Level III</label>
             </div>
