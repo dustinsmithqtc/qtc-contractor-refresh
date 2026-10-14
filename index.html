@@ -571,6 +571,7 @@ document.getElementById('contractorForm').addEventListener('submit', async funct
       certifications: [...form.querySelectorAll('input[name="certifications"]:checked')].map(x => x.value),
       certStatus: form.elements.certStatus.value,
       otherCertifications: form.elements.otherCertifications.value.trim(),
+      yearsExperience: form.elements.yearsExperience.value,
       oilGasYears: form.elements.oilGasYears.value,
       qaQcYears: form.elements.qaQcYears.value,
       vendorSurveillanceYears: form.elements.vendorSurveillanceYears.value,
