@@ -112,7 +112,31 @@
           <div><label class="field">City <span class="req">*</span></label><input name="city" type="text" required></div>
           <div><label class="field">State / Province <span class="req">*</span></label><input name="state" type="text" required></div>
           <div><label class="field">Country <span class="req">*</span></label>
-            <select name="country" required><option value="">Select</option><option>United States</option><option>Canada</option><option>Mexico</option><option>Other</option></select>
+            <select id="country" name="country" required>
+              <option value="">Select</option>
+              <option>United States</option>
+              <option>India</option>
+              <option>Italy</option>
+              <option>Germany</option>
+              <option>United Kingdom</option>
+              <option>France</option>
+              <option>Canada</option>
+              <option>Brazil</option>
+              <option>Argentina</option>
+              <option>Malaysia</option>
+              <option>South Korea</option>
+              <option>China</option>
+              <option>Japan</option>
+              <option>Nigeria</option>
+              <option>Angola</option>
+              <option>Kazakhstan</option>
+              <option>Mexico</option>
+              <option>Other</option>
+            </select>
+            <div id="otherCountryWrap" style="display:none;margin-top:10px">
+              <label class="field">Please Specify Country <span class="req">*</span></label>
+              <input id="otherCountry" name="otherCountry" type="text" placeholder="Enter country">
+            </div>
           </div>
         </div>
       </div>
@@ -372,6 +396,17 @@ const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbywX1b0FYuVlfv_E3
 const MAX_FILE_SIZE = 8 * 1024 * 1024;
 const MAX_TOTAL_SIZE = 25 * 1024 * 1024;
 
+const countrySelect = document.getElementById('country');
+const otherCountryWrap = document.getElementById('otherCountryWrap');
+const otherCountryInput = document.getElementById('otherCountry');
+
+countrySelect.addEventListener('change', function() {
+  const isOther = this.value === 'Other';
+  otherCountryWrap.style.display = isOther ? 'block' : 'none';
+  otherCountryInput.required = isOther;
+  if (!isOther) otherCountryInput.value = '';
+});
+
 document.getElementById('contractorForm').addEventListener('submit', async function(event) {
   event.preventDefault();
 
@@ -414,7 +449,9 @@ document.getElementById('contractorForm').addEventListener('submit', async funct
       phone: form.elements.phone.value.trim(),
       city: form.elements.city.value.trim(),
       state: form.elements.state.value.trim(),
-      country: form.elements.country.value,
+      country: form.elements.country.value === 'Other'
+        ? 'Other - ' + form.elements.otherCountry.value.trim()
+        : form.elements.country.value,
       disciplines: disciplines.map(x => x.value),
       otherDisciplines: form.elements.otherDisciplines.value.trim(),
       certifications: [...form.querySelectorAll('input[name="certifications"]:checked')].map(x => x.value),
@@ -440,6 +477,8 @@ document.getElementById('contractorForm').addEventListener('submit', async funct
     });
 
     form.reset();
+    otherCountryWrap.style.display = 'none';
+    otherCountryInput.required = false;
     submitButton.disabled = false;
     showStatus('success', 'Thank you. Your contractor profile has been submitted successfully.');
     window.scrollTo({top: document.body.scrollHeight, behavior:'smooth'});
