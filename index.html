@@ -577,6 +577,10 @@ document.getElementById('contractorForm').addEventListener('submit', async funct
       vendorSurveillanceYears: form.elements.vendorSurveillanceYears.value,
       availability: form.elements.availability.value,
       travel: form.elements.travel.value,
+      // Map the new experience fields into the legacy backend slots.
+      primaryExperience: form.elements.oilGasYears.value,
+      hourlyRate: form.elements.qaQcYears.value,
+      dailyRate: form.elements.vendorSurveillanceYears.value,
       comments: form.elements.comments.value.trim(),
       resume: resumeFile ? await fileToObject(resumeFile) : null,
       credentialFiles: await Promise.all(credentialFiles.map(fileToObject))
